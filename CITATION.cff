@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+    - alias: "kodetools@mooncloak.com"
+      website: "https://kodetools.mooncloak.codes"
+contact:
+    - alias: "kodetools@mooncloak.com"
+      website: "https://kodetools.mooncloak.codes"
+title: "ktask"
+type: "software"
+abstract: "Kotlin task runner facade."
+license: "Apache-2.0"
+keywords:
+    - "kotlin"
+    - "multiplatform"
+    - "task"
+    - "runner"
+    - "task runner"
+repository-code: "https://github.com/mooncloak/ktask"
+url: "https://github.com/mooncloak/ktask"

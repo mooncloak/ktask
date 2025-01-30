@@ -1,0 +1,18 @@
+public final class com/mooncloak/kodetools/ktask/ktor/TaskServiceNotInstalledException : java/lang/RuntimeException {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class com/mooncloak/kodetools/ktask/ktor/TaskServicePluginConfig {
+	public fun <init> ()V
+	public final fun service (Lcom/mooncloak/kodetools/ktask/TaskService;)V
+	public final fun service-SxA4cEA (Lkotlinx/coroutines/CoroutineScope;Lkotlinx/datetime/Clock;J)V
+	public static synthetic fun service-SxA4cEA$default (Lcom/mooncloak/kodetools/ktask/ktor/TaskServicePluginConfig;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/datetime/Clock;JILjava/lang/Object;)V
+}
+
+public final class com/mooncloak/kodetools/ktask/ktor/TaskServicePluginKt {
+	public static final fun getTaskService ()Lio/ktor/server/application/ApplicationPlugin;
+	public static final fun getTaskService (Lio/ktor/server/application/Application;)Lcom/mooncloak/kodetools/ktask/TaskService;
+}
+

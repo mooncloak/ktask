@@ -1,0 +1,214 @@
+public abstract class com/mooncloak/kodetools/ktask/DefaultTask : com/mooncloak/kodetools/ktask/Task {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/DefaultTask$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Lkotlin/time/Duration;ILkotlinx/datetime/Instant;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Lkotlin/time/Duration;ILkotlinx/datetime/Instant;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun copy-1SI94y4 (Ljava/lang/String;Ljava/lang/String;Lkotlinx/datetime/Instant;Lkotlin/time/Duration;Lkotlin/time/Duration;I)Lcom/mooncloak/kodetools/ktask/Task;
+	public fun getDelay-FghU774 ()Lkotlin/time/Duration;
+	public fun getId ()Ljava/lang/String;
+	public fun getInterval-FghU774 ()Lkotlin/time/Duration;
+	public fun getReplay ()I
+	public final fun getScheduled ()Lkotlinx/datetime/Instant;
+	public fun getType ()Ljava/lang/String;
+	public abstract fun invoke (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/mooncloak/kodetools/ktask/DefaultTask$Companion {
+}
+
+public abstract interface annotation class com/mooncloak/kodetools/ktask/ExperimentalTaskApi : java/lang/annotation/Annotation {
+}
+
+public abstract interface class com/mooncloak/kodetools/ktask/ServiceLifecycle : java/lang/AutoCloseable {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/ServiceLifecycle$Companion;
+	public abstract fun cancel ()V
+	public abstract fun close ()V
+	public abstract fun isActive ()Z
+	public abstract fun runInScope (Lkotlin/jvm/functions/Function2;)Z
+	public abstract fun start ()Z
+}
+
+public final class com/mooncloak/kodetools/ktask/ServiceLifecycle$Companion {
+}
+
+public final class com/mooncloak/kodetools/ktask/ServiceLifecycle$DefaultImpls {
+	public static fun close (Lcom/mooncloak/kodetools/ktask/ServiceLifecycle;)V
+}
+
+public final class com/mooncloak/kodetools/ktask/ServiceLifecycleKt {
+	public static final fun useSuspending (Lcom/mooncloak/kodetools/ktask/ServiceLifecycle;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class com/mooncloak/kodetools/ktask/Task {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/Task$Companion;
+	public abstract fun copy-1SI94y4 (Ljava/lang/String;Ljava/lang/String;Lkotlinx/datetime/Instant;Lkotlin/time/Duration;Lkotlin/time/Duration;I)Lcom/mooncloak/kodetools/ktask/Task;
+	public abstract fun getDelay-FghU774 ()Lkotlin/time/Duration;
+	public abstract fun getId ()Ljava/lang/String;
+	public abstract fun getInterval-FghU774 ()Lkotlin/time/Duration;
+	public abstract fun getReplay ()I
+	public abstract fun getScheduled ()Lkotlinx/datetime/Instant;
+	public abstract fun getType ()Ljava/lang/String;
+	public abstract fun invoke (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/mooncloak/kodetools/ktask/Task$Companion {
+}
+
+public final class com/mooncloak/kodetools/ktask/Task$DefaultImpls {
+	public static synthetic fun copy-1SI94y4$default (Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Ljava/lang/String;Lkotlinx/datetime/Instant;Lkotlin/time/Duration;Lkotlin/time/Duration;IILjava/lang/Object;)Lcom/mooncloak/kodetools/ktask/Task;
+}
+
+public abstract interface class com/mooncloak/kodetools/ktask/TaskEvent {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/TaskEvent$Companion;
+	public abstract fun getAction ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public abstract fun getId ()Ljava/lang/String;
+	public abstract fun getTasks ()Ljava/util/List;
+	public abstract fun getTimestamp ()Lkotlinx/datetime/Instant;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskEvent$Action : java/lang/Enum {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/TaskEvent$Action$Companion;
+	public static final field EXECUTE Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public static final field REMOVE Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public static final field SCHEDULE Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public static fun values ()[Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskEvent$Action$Companion {
+	public final fun get (Ljava/lang/String;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskEvent$Companion {
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskEvent$Completed : com/mooncloak/kodetools/ktask/TaskEvent {
+	public fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lkotlinx/datetime/Instant;Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/lang/String;Ljava/util/List;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (Lkotlinx/datetime/Instant;Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/lang/String;Ljava/util/List;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lkotlinx/datetime/Instant;
+	public final fun component2 ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()Ljava/lang/Boolean;
+	public final fun copy (Lkotlinx/datetime/Instant;Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/lang/String;Ljava/util/List;Ljava/lang/Boolean;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Completed;
+	public static synthetic fun copy$default (Lcom/mooncloak/kodetools/ktask/TaskEvent$Completed;Lkotlinx/datetime/Instant;Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/lang/String;Ljava/util/List;Ljava/lang/Boolean;ILjava/lang/Object;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Completed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getAction ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public final fun getDuplicate ()Ljava/lang/Boolean;
+	public fun getId ()Ljava/lang/String;
+	public fun getTasks ()Ljava/util/List;
+	public fun getTimestamp ()Lkotlinx/datetime/Instant;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskEvent$Failed : com/mooncloak/kodetools/ktask/TaskEvent {
+	public fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Lkotlinx/datetime/Instant;
+	public final fun component5 ()Ljava/lang/Throwable;
+	public final fun copy (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Throwable;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Failed;
+	public static synthetic fun copy$default (Lcom/mooncloak/kodetools/ktask/TaskEvent$Failed;Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;Ljava/lang/Throwable;ILjava/lang/Object;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Failed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getAction ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public final fun getCause ()Ljava/lang/Throwable;
+	public fun getId ()Ljava/lang/String;
+	public fun getTasks ()Ljava/util/List;
+	public fun getTimestamp ()Lkotlinx/datetime/Instant;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskEvent$Running : com/mooncloak/kodetools/ktask/TaskEvent {
+	public fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Lkotlinx/datetime/Instant;)V
+	public synthetic fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Lcom/mooncloak/kodetools/ktask/Task;Ljava/lang/String;Lkotlinx/datetime/Instant;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;)V
+	public synthetic fun <init> (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Lkotlinx/datetime/Instant;
+	public final fun copy (Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Running;
+	public static synthetic fun copy$default (Lcom/mooncloak/kodetools/ktask/TaskEvent$Running;Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;Ljava/util/List;Ljava/lang/String;Lkotlinx/datetime/Instant;ILjava/lang/Object;)Lcom/mooncloak/kodetools/ktask/TaskEvent$Running;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getAction ()Lcom/mooncloak/kodetools/ktask/TaskEvent$Action;
+	public fun getId ()Ljava/lang/String;
+	public fun getTasks ()Ljava/util/List;
+	public fun getTimestamp ()Lkotlinx/datetime/Instant;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskKt {
+	public static final fun getEstimatedRuntime (Lcom/mooncloak/kodetools/ktask/Task;)Lkotlinx/datetime/Instant;
+	public static final fun isRunnableAt (Lcom/mooncloak/kodetools/ktask/Task;Lkotlinx/datetime/Instant;)Z
+	public static final fun shouldRunAgain (Lcom/mooncloak/kodetools/ktask/Task;)Z
+}
+
+public abstract interface class com/mooncloak/kodetools/ktask/TaskQueue {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/TaskQueue$Companion;
+	public abstract fun clear (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun contains (Ljava/lang/String;)Z
+	public abstract fun enqueue (Lcom/mooncloak/kodetools/ktask/Task;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun enqueue-GW3ikoE (Ljava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Lkotlin/time/Duration;ILkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun get (Ljava/lang/String;)Lcom/mooncloak/kodetools/ktask/Task;
+	public abstract fun getAll ()Ljava/util/List;
+	public abstract fun getSize ()I
+	public abstract fun isEmpty ()Z
+	public abstract fun remove (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskQueue$Companion {
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskQueue$DefaultImpls {
+	public static synthetic fun enqueue-GW3ikoE$default (Lcom/mooncloak/kodetools/ktask/TaskQueue;Ljava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Lkotlin/time/Duration;ILkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static fun isEmpty (Lcom/mooncloak/kodetools/ktask/TaskQueue;)Z
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskQueueKt {
+	public static final fun getOrNull (Lcom/mooncloak/kodetools/ktask/TaskQueue;Ljava/lang/String;)Lcom/mooncloak/kodetools/ktask/Task;
+}
+
+public abstract interface class com/mooncloak/kodetools/ktask/TaskScheduler {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/TaskScheduler$Companion;
+	public abstract fun schedule (Lcom/mooncloak/kodetools/ktask/TaskService;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskScheduler$Companion {
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskSchedulerKt {
+	public static final fun launchSchedule (Lcom/mooncloak/kodetools/ktask/TaskService;Lcom/mooncloak/kodetools/ktask/TaskScheduler;)V
+	public static final fun schedule (Lcom/mooncloak/kodetools/ktask/TaskService;Lcom/mooncloak/kodetools/ktask/TaskScheduler;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class com/mooncloak/kodetools/ktask/TaskService : com/mooncloak/kodetools/ktask/ServiceLifecycle, com/mooncloak/kodetools/ktask/TaskQueue {
+	public static final field Companion Lcom/mooncloak/kodetools/ktask/TaskService$Companion;
+	public abstract fun getEvents ()Lkotlinx/coroutines/flow/SharedFlow;
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskService$Companion {
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskService$DefaultImpls {
+	public static fun close (Lcom/mooncloak/kodetools/ktask/TaskService;)V
+	public static fun isEmpty (Lcom/mooncloak/kodetools/ktask/TaskService;)Z
+}
+
+public final class com/mooncloak/kodetools/ktask/TaskServiceExtensionsKt {
+	public static final fun launchClear (Lcom/mooncloak/kodetools/ktask/TaskService;)Z
+	public static final fun launchEnqueue (Lcom/mooncloak/kodetools/ktask/TaskService;Lcom/mooncloak/kodetools/ktask/Task;)Z
+	public static final fun launchEnqueue-JioVLDc (Lcom/mooncloak/kodetools/ktask/TaskService;Ljava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Lkotlin/time/Duration;ILkotlin/jvm/functions/Function1;)Z
+	public static synthetic fun launchEnqueue-JioVLDc$default (Lcom/mooncloak/kodetools/ktask/TaskService;Ljava/lang/String;Ljava/lang/String;Lkotlin/time/Duration;Lkotlin/time/Duration;ILkotlin/jvm/functions/Function1;ILjava/lang/Object;)Z
+	public static final fun launchRemove (Lcom/mooncloak/kodetools/ktask/TaskService;Ljava/lang/String;)Z
+}
+
