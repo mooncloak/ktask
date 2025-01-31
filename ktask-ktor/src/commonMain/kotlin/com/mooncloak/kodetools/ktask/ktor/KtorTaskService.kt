@@ -227,6 +227,13 @@ internal class KtorTaskService internal constructor(
                     }
                 }
             }
+
+            // When we finish running the task, we should delay for a period before checking for more tasks to run.
+            // Check the available tasks and find the minimum delay period. If there are no tasks, then default to the
+            // downtimeDuration. This prevents us from continuously polling when there are tasks, but none are ready to
+            // be executed yet.
+            val delay = mutableTasks.minByOrNull { it.delay ?: 0.seconds }?.delay ?: downtimeDuration
+            delay(delay)
         } else {
             // There are currently no more tasks to run, so delay for the arbitrary delay period so we don't over
             // constrain system resources. After the delay, the event loop will proceed and check for more tasks.
